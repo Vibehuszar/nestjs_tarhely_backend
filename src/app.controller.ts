@@ -31,7 +31,6 @@ export class AppController {
   }
 
   @Post('/api/tarhely')
-  @Redirect()
   async insertTarhely(@Body() tarhelydata: TarhelyDataDto) {
     await db.execute('INSERT INTO tarhelycsomagok (nev, meret, ar) VALUES (?, ?, ?)',[
       tarhelydata.nev, tarhelydata.meret, tarhelydata.ar,
